@@ -1,5 +1,5 @@
 # card-games
-JavaScript modules defining Deck and Card prototypes.
+JavaScript modules defining Deck and Card prototypes. Example: http://emcain.net/games/blackjack.html
 
 I made this project as an example of object-oriented JavaScript. As of this writing (7 June 2016) the only game I've made is the Blackjack game, and it doesn't have a betting mechanism. However, I designed the Card and Deck functions to be used for any game with a standard 52-card deck.
 
