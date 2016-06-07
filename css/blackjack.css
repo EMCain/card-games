@@ -1,0 +1,22 @@
+#table {
+	background-color: green;
+	color: white;
+}
+#dealer_area, #player_1_area {
+	border: solid 2px white; 
+	padding: 10px;
+}
+.card{
+	color: black;
+	padding: 5px;
+	background-color: white;
+	border-radius: 2px;
+	margin: 5px;
+}
+.back{
+	color: white;
+	background-color: blue;
+}
+.red{
+	color: red;
+}
