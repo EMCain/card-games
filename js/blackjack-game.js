@@ -20,7 +20,6 @@ Game.prototype.getBetMultiplier = function(yourname){
 	for (i = 0; i < this.players.length; i++){
 		var player = this.players[i];
 		outcomes[player.name] = player.getOwnOutcome();
-		console.log("the outcome for " + player.name + " is " + outcomes[player.name]);
 	}
 	if(outcomes[yourname] == outcomes["Dealer"]){
 		return 0;
@@ -84,6 +83,7 @@ function play(myGame){
 	var player = myGame.player1;
 	player.newHand();
 	fillPlayerArea(playerArea, player);
+	$("#bet").prop("max", player.purse);
 }
 
 

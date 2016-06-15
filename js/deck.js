@@ -10,7 +10,6 @@ function Card(value, suit){
 }
 
 function Deck(){
-	console.log("creating deck");
 	this.cards = [];
 	var i;
 	var j;
