@@ -4,23 +4,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src='js/deck.js'></script>
 	<script src='js/player.js'></script>
-	<script src='js/game.js'></script>
+	<script src='js/blackjack-game.js'></script>
 	<link href='css/blackjack.css' rel='stylesheet'>
 	<script>
 		$(document).ready(function(){
-			myGame = new Game();
+			var myGame = new Game();
 			play(myGame);
 			$("#stand").click(function(){
 				stand(myGame);
+				$("#stand, #hit").attr("disabled", "disabled");
 			});
 			$("#hit").click(function(){
 				hit(myGame);
 			});
 			$("#restart").click(function(){
-			    location.reload();
+				$("#stand, #hit").removeAttr("disabled");
+				$("#winner").empty();
+				play(myGame);
 			});
 		});
-		
+
 	</script>
 </head>
 <body>
@@ -28,7 +31,11 @@
 	<div id="dealer_area">
 	</div>
 	<div id="player_1_area"></div>
-	<button id="stand">stand</button><button id="hit">hit</button><button id="restart">restart</button>
+	<label for="bet">My Bet: <label><input type="number" min=0 max=100 id="bet">	<button id="stand">stand</button>
+	<br><br>
+	<button id="hit">hit</button><button id="restart">restart</button>
+
+	<h2>Winner: <span id="winner"></span></h2>
 </div>
 </body>
 </html>

@@ -4,16 +4,17 @@ var suits = ['S', 'C', 'D', 'H'];
 
 var nnv = ['A', 'J', 'Q', 'K'];// non-number values
 
-function Card(value, suit){	
+function Card(value, suit){
 	this.value = value; // could be int or string
 	this.suit = suit;
 }
 
 function Deck(){
+	console.log("creating deck");
 	this.cards = [];
-	var i; 
-	var j; 
-	var k; 
+	var i;
+	var j;
+	var k;
 	for (i = 0; i < suits.length; i++){
 		for (j = 2; j <= 10; j++){
 			var card = new Card(j, suits[i]);
@@ -27,7 +28,7 @@ function Deck(){
 }
 
 Deck.prototype.shuffle = function(){
-	var i; 
+	var i;
 	for(i = this.cards.length - 1; i > 0; i--){
 		var j = Math.floor(Math.random()*(i+1));
 		var temp = this.cards[i];

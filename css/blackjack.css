@@ -3,8 +3,9 @@
 	color: white;
 }
 #dealer_area, #player_1_area {
-	border: solid 2px white; 
+	border: solid 2px white;
 	padding: 10px;
+	height: 200px; 
 }
 .card{
 	color: black;
@@ -19,4 +20,8 @@
 }
 .red{
 	color: red;
+}
+.purse{
+	font-size: 20px;
+	padding: 5px;
 }

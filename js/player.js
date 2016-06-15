@@ -2,9 +2,15 @@
 
 function Player(name, deck){
 	this.name = name;
-	this.hand = []
+	this.purse = 100;
+	this.hand = [];
+	this.deck = deck;
+}
+
+Player.prototype.newHand = function(){
+	this.hand = [];
 	for(var i = 0; i < 2; i++){
-		this.hand.push(deck.draw());	
+		this.hand.push(this.deck.draw());
 	}
 }
 
@@ -13,7 +19,7 @@ Player.prototype.drawCard = function(deck){
 }
 
 Player.prototype.getHandValue = function(){
-	var handValue = 0; 
+	var handValue = 0;
 	var aces = 0;
 	var card;
 	for(var i = 0; i < this.hand.length; i++){
@@ -34,9 +40,9 @@ Player.prototype.getHandValue = function(){
 			if(handValue > 21){
 				handValue -= 10;
 			}
-		}  
-	} 
-	return handValue;	
+		}
+	}
+	return handValue;
 }
 
 
@@ -48,7 +54,7 @@ Player.prototype.getOutcome = function(dealer){ // dealer is another player obje
 		return "Lose";
 	} else if(myHand == 21){
 		if(dealerHand == 21){
-			return "Tie"; 
+			return "Tie";
 		}
 		else {
 			return "Blackjack";
@@ -64,5 +70,17 @@ Player.prototype.getOutcome = function(dealer){ // dealer is another player obje
 			return "Tie";
 		}
 	}
-	
+
+}
+
+
+Player.prototype.getOwnOutcome = function(){
+	var myHand = this.getHandValue();
+	if(myHand > 21){
+		return "Bust";
+	} else if (myHand == 21) {
+		return "Blackjack";
+	} else {
+		return myHand;
+	}
 }
