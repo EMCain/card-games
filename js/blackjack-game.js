@@ -54,7 +54,7 @@ function fillPlayerArea(playerArea, player){
 	playerArea.empty();
 	playerArea.append('<h2>' + player.name + '</h2>');
 	playerArea.append('<div class="purse">$' + player.purse + "</div>");
-	playerArea.append('<h3>Outcome: '
+	playerArea.append('<h3>Score: '
 		+ player.getOwnOutcome()
 		+ '</h3>');
 	for(var i = 0; i < player.hand.length; i++){
